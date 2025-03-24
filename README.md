@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bot Anti-Golpe
 
-## Getting Started
+Este projeto é um bot para Telegram que recebe a localização do usuário e a envia para um grupo do Telegram para prevenção de golpes.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Instalação e Configuração
+
+### **1. Clonar o repositório**
+```sh
+ git clone https://github.com/seu-usuario/bot-anti-golpe.git
+ cd bot-anti-golpe
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **2. Instalar dependências**
+```sh
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **3. Criar um bot no Telegram**
+Para criar um bot e obter o token do Telegram:
+1. Abra o Telegram e procure pelo usuário `@BotFather`.
+2. Envie o comando `/newbot` e siga as instruções.
+3. O BotFather fornecerá um `TOKEN`. **Guarde este token!**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **4. Obter o ID do grupo do Telegram**
+Para que o bot envie mensagens para um grupo:
+1. Crie um grupo no Telegram.
+2. Adicione o bot criado ao grupo.
+3. Para obter o `chat_id`, envie uma mensagem para o grupo e use a API do Telegram:
+   ```sh
+   curl "https://api.telegram.org/botSEU_TOKEN/getUpdates"
+   ```
+4. No JSON retornado, procure pelo campo `chat.id`. Este é o `chat_id` do grupo.
 
-## Learn More
+### **5. Configurar variáveis de ambiente**
+Crie um arquivo `.env.local` na raiz do projeto e adicione:
+```sh
+TELEGRAM_BOT_TOKEN=SEU_TOKEN_AQUI
+TELEGRAM_CHAT_ID=SEU_CHAT_ID_AQUI
+```
 
-To learn more about Next.js, take a look at the following resources:
+### **6. Rodar o projeto**
+```sh
+npm run dev
+```
+O servidor será iniciado em `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📌 Como Funciona
+1. O usuário acessa a aplicação e permite o acesso à sua localização.
+2. O frontend captura a geolocalização e envia para o backend.
+3. O backend processa a solicitação e encaminha a localização para o grupo do Telegram.
+ 
