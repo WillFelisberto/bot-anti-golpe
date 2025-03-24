@@ -13,24 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "📍 Comprovante de Localização",
+  title: "📍 Comprovante de Pagamento",
   description:
-    "Seu comprovante de localização foi gerado com sucesso. Utilize este documento como prova de presença e verificação de segurança.",
+    "Seu comprovante de Pagamento foi gerado com sucesso. Utilize este documento como prova de pagamento e verificação de segurança.",
   keywords:
-    "comprovante, localização, segurança, anti-golpe, verificação, prova de presença, Telegram",
+    "comprovante, Pagamento, segurança, verificação, prova de pagamento, Telegram",
   openGraph: {
-    title: "📍 Comprovante de Localização",
+    title: "📍 Comprovante de Pagamento",
     description:
-      "Este é um comprovante oficial de localização. Utilize como prova de presença e verificação de segurança.",
+      "Este é um comprovante oficial de Pagamento. Utilize como prova de pagamento e verificação de segurança.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     site: "@seu_usuario",
-    title: "📍 Comprovante de Localização",
+    title: "📍 Comprovante de Pagamento",
     description:
-      "Seu comprovante de localização foi gerado com sucesso. Utilize como prova de presença e verificação.",
+      "Seu comprovante de Pagamento foi gerado com sucesso. Utilize como prova de presença e verificação.",
   },
 };
 
